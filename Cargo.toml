@@ -1,6 +1,6 @@
 [package]
 name = "alloc_counter"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["The SiO4 Project Developers <https://gitlab.com/sio4>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -18,14 +18,18 @@ required-features = ["std", "macros"]
 default = ["std", "macros"]
 std = []
 macros = ["alloc_counter_macro"]
+rustdoc = []
+
+[dependencies]
+pin-utils = "0.1.0-alpha.4"
 
 [dependencies.alloc_counter_macro]
 path = "alloc_counter_macro"
 version = "0.0.2"
 optional = true
 
-[dependencies.pin-utils]
-version = "0.1.0-alpha.4"
+[dev-dependencies]
+futures-executor = "0.3.0"
 
-[dev-dependencies.futures-executor-preview]
-version = "0.3.0-alpha.19"
+[package.metadata.docs.rs]
+all-features = true

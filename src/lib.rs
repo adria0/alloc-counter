@@ -1,8 +1,7 @@
 #![cfg_attr(not(feature = "std"), no_std)]
-#![feature(doc_cfg)]
-#![cfg_attr(rustdoc, feature(external_doc))]
-#![cfg_attr(rustdoc, doc(include = "../README.md"))]
-#![cfg_attr(not(rustdoc), doc = "external documentation in README.md")]
+#![cfg_attr(feature = "rustdoc", feature(external_doc))]
+#![cfg_attr(feature = "rustdoc", doc(include = "../README.md"))]
+#![cfg_attr(not(feature = "rustdoc"), doc = "external documentation in README.md")]
 #![warn(missing_docs)]
 
 extern crate alloc;
